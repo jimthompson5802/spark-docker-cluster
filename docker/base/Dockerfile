@@ -18,6 +18,8 @@ ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-${PY4J_VERSION}-sr
 ENV PATH /opt/conda/bin:$SPARK_HOME/bin:$PATH
 ENV PYSPARK_PYTHON=/opt/conda/bin/python
 
+RUN mkdir /spark
+
 
 
 

@@ -1,6 +1,9 @@
 FROM spark-base:2.3.3
 
-COPY pyspark_jupyter_notebook.sh /sbin
-RUN chmod 755 /sbin/pyspark_jupyter_notebook.sh
 
 ENV PYSPARK_DRIVER_PYTHON "jupyter"
+ENV PYSPARK_DRIVER_PYTHON_OPTS "notebook --NotebookApp.token='' --notebook-dir=/opt/project --allow-root --ip='*'  --port=8888 --no-browser"
+
+COPY start-pyspnb.sh /spark
+RUN chmod 755 /spark/start-pyspnb.sh
+

@@ -13,12 +13,12 @@ services:
       - "8080:8080"
 
     volumes:
-      - "${PWD}/data:/opt/project/data"
+      - "${PWD}/data:/spark/data"
 
     user: root
 
     # command to start spark server
-    command: /sbin/start-spark-master.sh
+    command: /spark/start-spark-master.sh
 
   worker:
     image: spark-worker:2.3.3
@@ -29,24 +29,28 @@ services:
 #      - "8080:8080"
 
     volumes:
-      - "${PWD}/data:/opt/project/data"
+      - "${PWD}/data:/spark/data"
+
 
     user: root
 
     # command to start spark server
-    command: /sbin/start-spark-worker.sh spark://master:7077
+    command: /spark/start-spark-worker.sh
 
   pyspnb:
-    image: spark-base:2.3.3
+    image: spark-pyspnb:2.3.3
 
     ports:
       - "8888:8888"
 
     volumes:
-      - "${PWD}/data:/opt/project/data"
+      - "/Users/jim/Desktop/datascience_sample:/opt/project"
 
     user: root
 
     # command jupyter notebook server
-    command: /sbin/pyspark_jupyter_notebook.sh
+    command: /spark/start-pyspnb.sh
 
+#
+#    tty: true
+#    stdin_open: true
