@@ -3,3 +3,6 @@ data
 .ipynb_checkpoints
 metastore_db
 derby.log
+
+# keep track of these files
+!data/README.md
