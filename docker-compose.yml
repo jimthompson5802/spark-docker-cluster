@@ -20,7 +20,18 @@ services:
     # command to start spark server
     command: /spark/start-spark-master.sh
 
-  worker:
+  worker1:
+    image: spark-worker:2.3.3
+
+    volumes:
+      - "${PWD}/data:/spark/data"
+
+    user: root
+
+    # command to start spark server
+    command: /spark/start-spark-worker.sh
+
+  worker2:
     image: spark-worker:2.3.3
 
     volumes:
@@ -35,8 +46,8 @@ services:
     image: spark-pyspnb:2.3.3
 
     ports:
-      - "8888:8888"
-      - "4040:4040"
+      - "8888:8888"  # jupyter notebook server
+      - "4040:4040"  # spark job web ui
 
     volumes:
       - "${CODE_DIR:-/tmp}:/opt/project"
