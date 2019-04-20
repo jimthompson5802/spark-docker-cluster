@@ -8,9 +8,9 @@ services:
     image: spark-master:2.3.3
     
     ports:
-      - "7077:7077"
-      - "6066:6066"
-      - "8080:8080"
+      - "7077:7077"  # Spark master port
+      - "6066:6066"  # spark rest api
+      - "8080:8080"  # Spark master web UI
 
     volumes:
       - "${PWD}/data:/spark/data"
@@ -23,14 +23,8 @@ services:
   worker:
     image: spark-worker:2.3.3
 
-#    ports:
-#      - "7077:7077"
-#      - "6066:6066"
-#      - "8080:8080"
-
     volumes:
       - "${PWD}/data:/spark/data"
-
 
     user: root
 
@@ -42,9 +36,10 @@ services:
 
     ports:
       - "8888:8888"
+      - "4040:4040"
 
     volumes:
-      - "/Users/jim/Desktop/datascience_sample:/opt/project"
+      - "${CODE_DIR:-/tmp}:/opt/project"
 
     user: root
 
