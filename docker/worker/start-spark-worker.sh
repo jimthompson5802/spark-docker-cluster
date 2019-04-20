@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/usr/local/spark/sbin/start-slave.sh spark://master:7077  --cores 4  --memory 4g
+/usr/local/spark/sbin/start-slave.sh spark://master:7077  $@
 
 # keep this script alive so container stays active
 while [ 1 -eq 1 ]
