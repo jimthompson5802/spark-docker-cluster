@@ -1,0 +1,52 @@
+version: '3'
+
+
+services:
+
+# Spark containers
+  master:
+    image: spark-master:2.3.3
+    
+    ports:
+      - "7077:7077"
+      - "6066:6066"
+      - "8080:8080"
+
+    volumes:
+      - "${PWD}/data:/opt/project/data"
+
+    user: root
+
+    # command to start spark server
+    command: /sbin/start-spark-master.sh
+
+  worker:
+    image: spark-worker:2.3.3
+
+#    ports:
+#      - "7077:7077"
+#      - "6066:6066"
+#      - "8080:8080"
+
+    volumes:
+      - "${PWD}/data:/opt/project/data"
+
+    user: root
+
+    # command to start spark server
+    command: /sbin/start-spark-worker.sh spark://master:7077
+
+  pyspnb:
+    image: spark-base:2.3.3
+
+    ports:
+      - "8888:8888"
+
+    volumes:
+      - "${PWD}/data:/opt/project/data"
+
+    user: root
+
+    # command jupyter notebook server
+    command: /sbin/pyspark_jupyter_notebook.sh
+
