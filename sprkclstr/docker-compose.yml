@@ -4,13 +4,10 @@ version: '3'
 services:
 
 # Spark containers
-  master:
+  spark-master:
     image: "spark-master:${APACHE_SPARK_VERSION}"
 
-    networks:
-      default:
-        aliases:
-          - spark_master
+    hostname: spark-master
     
     ports:
       - "8080:8080"  # Spark master web UI
@@ -23,13 +20,10 @@ services:
     # command to start spark server
     command: /spark/start-spark-master.sh
 
-  worker1:
+  spark-worker1:
     image: "spark-worker:${APACHE_SPARK_VERSION}"
 
-    networks:
-      default:
-        aliases:
-          - spark_worker1
+    hostname: spark-worker1
 
     ports:
       - "18081:18081"
@@ -42,13 +36,10 @@ services:
     # command to start spark server
     command: /spark/start-spark-worker.sh  --cores 4 --memory 4g --webui-port 18081
 
-  worker2:
+  spark-worker2:
     image: "spark-worker:${APACHE_SPARK_VERSION}"
 
-    networks:
-      default:
-        aliases:
-          - spark_worker2
+    hostname: spark-worker2
 
     ports:
       - "28081:28081"
@@ -61,13 +52,10 @@ services:
     # command to start spark server
     command: /spark/start-spark-worker.sh  --cores 4 --memory 4g  --webui-port 28081
 
-  pyspnb:
+  pyspnb-client:
     image: "spark-pyspnb:${APACHE_SPARK_VERSION}"
 
-    networks:
-      default:
-        aliases:
-          - spark_client
+    hostname: pyspnb-client
 
     ports:
       - "8888:8888"  # jupyter notebook server
@@ -81,7 +69,3 @@ services:
 
     # command jupyter notebook server
     command: /spark/start-pyspnb.sh
-
-#
-#    tty: true
-#    stdin_open: true
