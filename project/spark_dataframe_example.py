@@ -37,8 +37,3 @@ order by hostname, pid
     """).show()
 
     spark.stop()
-
-
-
-
-
