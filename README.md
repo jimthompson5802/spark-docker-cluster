@@ -66,7 +66,7 @@ docker-compose up --detach
 ```
 
 To verify the cluster successfully started, run the `docker-compose ps` command.  The output should look similar to below.  
-```python
+```
        Name                      Command               State                                   Ports                                 
 -------------------------------------------------------------------------------------------------------------------------------------
 sprkclstr_master_1    /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:8080->8080/tcp                                                
