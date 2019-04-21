@@ -3,8 +3,13 @@
 # Environment variables to set for docker-compose file
 #
 
+# Docker image tag for the version of Spark to run
 APACHE_SPARK_VERSION=2.4.1
 
-CODE_DIR=<fully qualified path to directory that will be attached to PySpark Jupyter Notebook container>
+# Fully qualified path to directory containing source that will be attached the PySpark Jupyter Notebook container.
+# This is mapped `/opt/project` in the container.
+CODE_DIR=/top_level_dir/subdir1/subdir1/code_dir
 
-DATA_DIR=<fully qualified path to directory for simulated distributed file system>
+# Fully qualified path to directory that will serve as the persistent storage for the simulated distributed file system.
+# This is mapped `/spark/data` in the container.
+DATA_DIR=/top_level_dir/subdirx/data_dir

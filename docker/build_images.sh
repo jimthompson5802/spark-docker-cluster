@@ -1,8 +1,13 @@
 #!/bin/bash
 
+# Version of ContinuumIO's Anaconda3 docker image to use as the base image
 ANACONDA3_VERSION=5.3.0
+
+# Version of pre-built  Apache spark and Hadoop from spark.apache.org
 APACHE_SPARK_VERSION=2.4.1
 HADOOP_VERSION=2.7
+
+# Version of py4j used in the Spark build
 PY4J_VERSION=0.10.7
 
 docker build --build-arg APACHE_SPARK_VERSION=$APACHE_SPARK_VERSION \
