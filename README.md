@@ -75,6 +75,13 @@ sprkclstr_worker1_1   /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:18081->18
 sprkclstr_worker2_1   /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:28081->28081/tcp 
 ```
 
+## Shutdown Stand-alone Spark Cluster
+From the root directory execute this command
+```
+cd sprkclstr
+docker-compose down
+```
+
 ## Accessing the Cluster
 The following web UIs are available:
 
@@ -84,9 +91,5 @@ The following web UIs are available:
 |Spark Master Web UI|`http://localhost:8080`|
 
 
-## Shutdown Stand-alone Spark Cluster
-From the root directory execute this command
-```
-cd sprkclstr
-docker-compose down
-```
+### Screen shots of using Pyspark Jupyter Notebook Server (`http://localhost:8888`)
+![PySpark Jupyter Notebook Home Page](./images/jupyter_notebook_home_page.png)
