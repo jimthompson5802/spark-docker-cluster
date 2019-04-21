@@ -94,3 +94,5 @@ The following web UIs are available:
 
 ### Screen shots of using Pyspark Jupyter Notebook Server (`http://localhost:8888`)
 ![PySpark Jupyter Notebook Home Page](./images/jupyter_notebook_home_page.png)
+
+![PySpark Jupyter Notebook Example](./images/jupyter_notebook_example.png)
