@@ -5,4 +5,9 @@
 #  $2: Directory for persistent store that is mounted to all containers at /spark/data.
 #      This simulates a distributed file system.
 
-CODE_DIR=$1  DATA_DIR=$2 docker-compose up --detach
+code_dir=${1:-$PWD/project}
+data_dir=${2:-$PWD/data}
+
+echo $code_dir  $data_dir
+
+CODE_DIR=$code_dir  DATA_DIR=$data_dir docker-compose up --detach
