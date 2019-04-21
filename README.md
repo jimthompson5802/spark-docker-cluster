@@ -21,7 +21,7 @@ These three images are based on a custom `spark-base` image built using the [`co
 * Miscellenous system utilities to support running Apache Spark
 
 First configure the build script (`docker/build_images.sh`) to specify software versions desired.  If different versions are desired, then these parameters can be changed.
-```python
+```
 # Version of ContinuumIO's Anaconda3 docker image to use as the base image 
 ANACONDA3_VERSION=5.3.0
 
