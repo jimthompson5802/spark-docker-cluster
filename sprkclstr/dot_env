@@ -1,0 +1,10 @@
+#
+# Sample file.  Rename this to .env after specifying values for the variables below
+# Environment variables to set for docker-compose file
+#
+
+APACHE_SPARK_VERSION=2.4.1
+
+CODE_DIR=<fully qualified path to directory that will be attached to PySpark Jupyter Notebook container>
+
+DATA_DIR=<fully qualified path to directory for simulated distributed file system>
