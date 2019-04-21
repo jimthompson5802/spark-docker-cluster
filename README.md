@@ -114,7 +114,7 @@ The following web UIs are available:
 ## Using `spark-submit` on the Stand-alone Spark Cluster
 In addition to a PySpark Jupyter Notebook Server, it is possible to use the `spark-submit` cli to submit work to the cluster.  These are the steps to use `spark-submit`:
 
-* Connect to the `pyspnb` container using `docker exec -it sprkclstr_pyspnb_1 /bin/bash` command.  Note:  
+* Connect to the `pyspnb` container using `docker exec -it sprkclstr_pyspnb_1 /bin/bash` command.  Note:  Container name is the one dispalyed for the `pyspnb` image shown by the `docker-compose ps` command.
 * Once connected, remove the `PYSPARK_DRIVER_PYTHON` environment variable by executing this command `unset PYSPARK_DRIVER_PYTHON`
 * Navigate to the container directory containing program to run with `spark-submit`
 * Execute the `spark-submit` command
