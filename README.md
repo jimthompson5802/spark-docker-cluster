@@ -92,14 +92,14 @@ The following web UIs are available:
 
 
 
-### Screen shots of using Pyspark Jupyter Notebook Server (`http://localhost:8888`)
+### \>\>\> Screen shots of using Pyspark Jupyter Notebook Server (`http://localhost:8888`)
 ### Jupyter Notebook Home Page
 ![PySpark Jupyter Notebook Home Page](./images/jupyter_notebook_home_page.png)
 
 ### Example PySpark Jupyter Notebook
 ![PySpark Jupyter Notebook Example](./images/jupyter_notebook_example.png)
 
-### Screen shots of Spark Master Web UI (`http://localhost:8080`)
+### \>\>\> Screen shots of Spark Master Web UI (`http://localhost:8080`)
 ### Spark Master Web UI - Main Page
 ![Spark Master Web UI - Main Page](./images/spark_master_web_ui.png)
 
