@@ -71,7 +71,7 @@ services:
 
     ports:
       - "8888:8888"  # jupyter notebook server
-      - "4040-4042:4040-4042"  # spark job web ui
+      - "4040-4041:4040-4041"  # spark job web ui
 
     volumes:
       - "${CODE_DIR:-/tmp}:/opt/project"

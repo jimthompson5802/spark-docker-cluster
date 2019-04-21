@@ -67,12 +67,12 @@ docker-compose up --detach
 
 To verify the cluster successfully started, run the `docker-compose ps` command.  The output should look similar to below.  
 ```python
-       Name                      Command               State                                               Ports                                             
--------------------------------------------------------------------------------------------------------------------------------------------------------------
-sprkclstr_master_1    /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:8080->8080/tcp                                                                        
-sprkclstr_pyspnb_1    /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:4040->4040/tcp, 0.0.0.0:4041->4041/tcp, 0.0.0.0:4042->4042/tcp, 0.0.0.0:8888->8888/tcp
-sprkclstr_worker1_1   /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:18081->18081/tcp                                                                      
-sprkclstr_worker2_1   /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:28081->28081/tcp  
+       Name                      Command               State                                   Ports                                 
+-------------------------------------------------------------------------------------------------------------------------------------
+sprkclstr_master_1    /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:8080->8080/tcp                                                
+sprkclstr_pyspnb_1    /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:4040->4040/tcp, 0.0.0.0:4041->4041/tcp, 0.0.0.0:8888->8888/tcp
+sprkclstr_worker1_1   /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:18081->18081/tcp                                              
+sprkclstr_worker2_1   /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:28081->28081/tcp 
 ```
 
 ## Accessing the Cluster
