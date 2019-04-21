@@ -1,4 +1,5 @@
-FROM continuumio/anaconda3:5.3.0
+ARG ANACONDA3_VERSION
+FROM continuumio/anaconda3:${ANACONDA3_VERSION}
 
 # Version Specification
 ARG APACHE_SPARK_VERSION
