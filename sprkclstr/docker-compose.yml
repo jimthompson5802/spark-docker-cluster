@@ -5,7 +5,7 @@ services:
 
 # Spark containers
   master:
-    image: spark-master:2.3.3
+    image: "spark-master:${APACHE_SPARK_VERSION}"
 
     networks:
       default:
@@ -24,7 +24,7 @@ services:
     command: /spark/start-spark-master.sh
 
   worker1:
-    image: spark-worker:2.3.3
+    image: "spark-worker:${APACHE_SPARK_VERSION}"
 
     networks:
       default:
@@ -43,7 +43,7 @@ services:
     command: /spark/start-spark-worker.sh  --cores 4 --memory 4g --webui-port 18081
 
   worker2:
-    image: spark-worker:2.3.3
+    image: "spark-worker:${APACHE_SPARK_VERSION}"
 
     networks:
       default:
@@ -62,7 +62,7 @@ services:
     command: /spark/start-spark-worker.sh  --cores 4 --memory 4g  --webui-port 28081
 
   pyspnb:
-    image: spark-pyspnb:2.3.3
+    image: "spark-pyspnb:${APACHE_SPARK_VERSION}"
 
     networks:
       default:
