@@ -1,5 +1,6 @@
 # ignore these
 data/*
+images/architecture_slide.pptx
 .idea
 .ipynb_checkpoints
 .DS_Store
@@ -10,3 +11,4 @@ derby.log
 
 # keep track of these files
 !data/README.md
+

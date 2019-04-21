@@ -1,5 +1,9 @@
 # Stand-alone Spark Cluster Using Docker Containers
 
+## Overview
+
+![Architecture Overview](./images/architecture_slide.jpg)
+
 
 ## Starting Stand-alone Spark Cluster
 From the root directory execute this command
