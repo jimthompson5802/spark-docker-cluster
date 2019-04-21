@@ -1,5 +1,7 @@
 # Stand-alone Spark Cluster Using Docker Containers
 
+Work documented in this repo was inspired by this [blog posting](https://medium.com/@marcovillarreal_40011/creating-a-spark-standalone-cluster-with-docker-and-docker-compose-ba9d743a157f).
+
 ## Overview
 
 This repo demonstrates how to run a stand-alone Spark cluster using Docker Containers and `docker-compose`.  The work describe here was performed on a MacBook Pro (MacOS 10.14.4) and Docker for Mac (2.0.0.3).
