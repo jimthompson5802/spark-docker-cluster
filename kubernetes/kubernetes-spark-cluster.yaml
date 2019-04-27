@@ -126,10 +126,10 @@ items:
         restartPolicy: Always
         volumes:
         - hostPath:
-            path: /Users/jim/Desktop/docker_sandbox/spark-docker-cluster/kubernetes/Users/jim/Desktop/docker-sandbox/spark-docker-cluster/project
+            path: /Users/jim/Desktop/docker-sandbox/spark-docker-cluster/project
           name: pyspnb-client-hostpath0
         - hostPath:
-            path: /Users/jim/Desktop/docker_sandbox/spark-docker-cluster/kubernetes/Users/jim/Desktop/docker-sandbox/spark-docker-cluster/data
+            path: /Users/jim/Desktop/docker-sandbox/spark-docker-cluster/data
           name: pyspnb-client-hostpath1
   status: {}
 - apiVersion: extensions/v1beta1
@@ -168,7 +168,7 @@ items:
         restartPolicy: Always
         volumes:
         - hostPath:
-            path: /Users/jim/Desktop/docker_sandbox/spark-docker-cluster/kubernetes/Users/jim/Desktop/docker-sandbox/spark-docker-cluster/data
+            path: /Users/jim/Desktop/docker-sandbox/spark-docker-cluster/data
           name: spark-master-hostpath0
   status: {}
 - apiVersion: extensions/v1beta1
@@ -213,7 +213,7 @@ items:
         restartPolicy: Always
         volumes:
         - hostPath:
-            path: /Users/jim/Desktop/docker_sandbox/spark-docker-cluster/kubernetes/Users/jim/Desktop/docker-sandbox/spark-docker-cluster/data
+            path: /Users/jim/Desktop/docker-sandbox/spark-docker-cluster/data
           name: spark-worker1-hostpath0
   status: {}
 - apiVersion: extensions/v1beta1
@@ -258,7 +258,7 @@ items:
         restartPolicy: Always
         volumes:
         - hostPath:
-            path: /Users/jim/Desktop/docker_sandbox/spark-docker-cluster/kubernetes/Users/jim/Desktop/docker-sandbox/spark-docker-cluster/data
+            path: /Users/jim/Desktop/docker-sandbox/spark-docker-cluster/data
           name: spark-worker2-hostpath0
   status: {}
 kind: List
