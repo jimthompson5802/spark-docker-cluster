@@ -34,7 +34,7 @@ services:
     user: root
 
     # command to start spark server
-    command: /spark/start-spark-worker.sh spark://spark-master:7077  --cores 4 --memory 4g --webui-port 18081
+    command: /spark/start-spark-worker.sh spark://spark-master:7077 --cores 4 --memory 4g --webui-port 18081
 
   spark-worker2:
     image: "spark-worker:${APACHE_SPARK_VERSION}"
@@ -68,4 +68,4 @@ services:
     user: root
 
     # command jupyter notebook server
-    command: /spark/start-pyspnb.sh
+    command: /spark/start-pyspnb.sh spark://spark-master:7077
