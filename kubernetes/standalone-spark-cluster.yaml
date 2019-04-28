@@ -204,6 +204,7 @@ items:
         containers:
         - args:
           - /spark/start-spark-worker.sh
+          - "spark://spark-master-kub:7077"
           - --cores
           - "4"
           - --memory
@@ -249,6 +250,7 @@ items:
         containers:
         - args:
           - /spark/start-spark-worker.sh
+          - "spark://spark-master-kub:7077"
           - --cores
           - "4"
           - --memory
