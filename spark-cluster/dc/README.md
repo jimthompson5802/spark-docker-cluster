@@ -1,9 +1,9 @@
 # Spark Stand-alone Cluster with `docker-compose`
 
 ## Starting Stand-alone Spark Cluster
-First, specify the parameters to be used in `docker-compose`.  These parameters are specified in the `.env`.  A sample file (`sprkclstr/dot_env`) is provided in this repo.  Modify the parameters as needed then rename `dot_env` to `.env`.
+First, specify the parameters to be used in `docker-compose`.  These parameters are specified in the `.env`.  A sample file (`spark-cluster/dc/dot_env`) is provided in this repo.  Modify the parameters as needed then rename `dot_env` to `.env`.
 
-Contents of `sprkclstr/dot_env`:
+Contents of `spark-cluster/dc/dot_env`:
 ```
 #
 # Sample file.  Rename this to .env after specifying values for the variables below
@@ -22,9 +22,9 @@ CODE_DIR=/top_level_dir/subdir1/subdir1/code_dir
 DATA_DIR=/top_level_dir/subdirx/data_dir
 ```
 
-After modifying `sprkclstr/dot_env` and renaming to `sprkclstr/.env`, the Spark cluster can be started as follows:
+After modifying `spark-cluster/dc/dot_env` and renaming to `spark-cluster/dc/.env`, the Spark cluster can be started as follows:
 ```
-cd sprkclstr
+cd spark-cluster/dc
 docker-compose up --detach
 ```
 
@@ -32,16 +32,16 @@ To verify the cluster successfully started, run the `docker-compose ps` command.
 ```
           Name                         Command               State                                   Ports
 -------------------------------------------------------------------------------------------------------------------------------------------
-sprkclstr_pyspnb-client_1   /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:4040->4040/tcp, 0.0.0.0:4041->4041/tcp, 0.0.0.0:8888->8888/tcp
-sprkclstr_spark-master_1    /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:8080->8080/tcp
-sprkclstr_spark-worker1_1   /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:18081->18081/tcp
-sprkclstr_spark-worker2_1   /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:28081->28081/tcp
+dc_pyspnb-client_1   /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:4040->4040/tcp, 0.0.0.0:4041->4041/tcp, 0.0.0.0:8888->8888/tcp
+dc_spark-master_1    /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:8080->8080/tcp
+dc_spark-worker1_1   /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:18081->18081/tcp
+dc_spark-worker2_1   /usr/bin/tini -- /spark/st ...   Up      0.0.0.0:28081->28081/tcp
 ```
 
 ## Shutdown Stand-alone Spark Cluster
 From the root directory execute this command
 ```
-cd sprkclstr
+cd spark-cluster/dc
 docker-compose down
 ```
 
@@ -75,7 +75,7 @@ The following web UIs are available:
 ## Using `spark-submit` on the Stand-alone Spark Cluster
 In addition to a PySpark Jupyter Notebook Server, it is possible to use the `spark-submit` cli to submit work to the cluster.  These are the steps to use `spark-submit`:
 
-* Connect to the `pyspnb` container using `docker exec -it sprkclstr_pyspnb-client_1 /bin/bash` command.  Note:  Container name is the one dispalyed for the `pyspnb` image shown by the `docker-compose ps` command.
+* Connect to the `pyspnb` container using `docker exec -it dc_pyspnb-client_1 /bin/bash` command.  Note:  Container name is the one dispalyed for the `pyspnb` image shown by the `docker-compose ps` command.
 * Navigate to the container directory containing program to run with `spark-submit`
 * Execute the `spark-submit` command
 
@@ -84,10 +84,10 @@ Following illustrates the above steps with embedded commentary.
 #
 # On the host, execute `docker exec`
 #
-Jim-MacBook-Pro:~ jim$ docker exec -it sprkclstr_pyspnb-client_1 /bin/bash
+Jim-MacBook-Pro:~ jim$ docker exec -it dc_pyspnb-client_1 /bin/bash
 
 #
-# Following commands are executed in the sprkclstr_pyspnb-client_1 container
+# Following commands are executed in the dc_pyspnb-client_1 container
 #
 (base) root@pyspnb-client:/opt/project# hostname
 pyspnb-client
