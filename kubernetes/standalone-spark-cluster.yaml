@@ -40,6 +40,7 @@ spec:
       containers:
       - args:
         - /spark/start-pyspnb.sh
+        - "spark://spark-master-kub:7077"
         image: spark-pyspnb:2.4.1
         name: pyspnb-client
         ports:
