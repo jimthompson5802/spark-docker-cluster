@@ -19,7 +19,7 @@ spec:
     targetPort: 4040
   selector:
     app: pyspnb-client
-  type: LoadBalancer
+  clusterIP: None
 
 ---
 apiVersion: extensions/v1beta1
