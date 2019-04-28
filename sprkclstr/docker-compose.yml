@@ -34,7 +34,7 @@ services:
     user: root
 
     # command to start spark server
-    command: /spark/start-spark-worker.sh  --cores 4 --memory 4g --webui-port 18081
+    command: /spark/start-spark-worker.sh spark://spark-master:7077 --cores 4 --memory 4g --webui-port 18081
 
   spark-worker2:
     image: "spark-worker:${APACHE_SPARK_VERSION}"
@@ -50,7 +50,7 @@ services:
     user: root
 
     # command to start spark server
-    command: /spark/start-spark-worker.sh  --cores 4 --memory 4g  --webui-port 28081
+    command: /spark/start-spark-worker.sh spark://spark-master:7077 --cores 4 --memory 4g  --webui-port 28081
 
   pyspnb-client:
     image: "spark-pyspnb:${APACHE_SPARK_VERSION}"
