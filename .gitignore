@@ -8,7 +8,7 @@ __pycache__
 .pytest_cache
 metastore_db
 derby.log
-sprkclstr/.env
+spark-cluster/dc/.env
 
 # keep track of these files
 !data/README.md
