@@ -57,12 +57,3 @@ The following web UIs are available:
 |PySpark Jupyter Notebook Server|`http://localhost:8888`|
 |Spark Master Web UI|`http://localhost:8080`|
 
-For the PySpark Jupyter Notebook Server use this port forwarding specification
-```
-kubectl port-foward <pyspnb-client pod> 8888 4040
-```
-
-For Spark Master Web UI, set up this port forwarding specification
-```
-kubectl port-foward <spark-master pod> 8080
-```
