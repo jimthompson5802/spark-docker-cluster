@@ -4,7 +4,7 @@ This [blog posting](https://medium.com/@marcovillarreal_40011/creating-a-spark-s
 
 ## Overview
 
-This repo demonstrates how to run a stand-alone Spark cluster using Docker Containers with `docker-compose` abd `kubernetes`.  The work describe here was performed on a MacBook Pro (MacOS 10.14.4) and Docker for Mac (2.0.0.3).
+This repo demonstrates how to run a stand-alone Spark cluster using Docker Containers with `docker-compose` and `kubernetes`.  The work describe here was performed on a MacBook Pro (MacOS 10.14.4) and Docker for Mac (2.0.0.3).
 
 ![Architecture Overview](./images/architecture_slide.jpg)
 
