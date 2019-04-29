@@ -4,6 +4,61 @@
 
 Encountered this [issue](https://medium.com/@varunreddydaaram/kubernetes-did-not-work-with-apache-spark-de923ae7ab5c).  This necessitated changing kubernetes service name from `spark-master` to `spark-master-kub`.
 
+### Specify Location of `project` and `data` directories
+
+For the location of Jupyter Notebooks, update the `path:` key with the host directory, in the following:
+```
+  hostPath:
+    path: "/top_level_dir/subdirx/project_dir"
+```
+
+in this portion of the `k8s-spark-cluster.yaml` file
+
+```
+# Volume containing project source code
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: project-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: project-dir
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/top_level_dir/subdirx/project_dir"
+```
+
+For the location of shared data, update the `path:` key with the host directory, in the following:
+```
+  hostPath:
+    path: "/top_level_dir/subdirx/data_dir"
+```
+
+in this portion of the `k8s-spark-cluster.yaml` file
+
+```
+# Volume simulating distributed file system
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: data-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: spark-data
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/top_level_dir/subdirx/data_dir"
+```
 
 ## Starting Stand-alone Spark Cluster
 Start kubernetes cluster:
