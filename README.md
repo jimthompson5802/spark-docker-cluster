@@ -41,6 +41,6 @@ cd docker
 
 ## Running the Stand-alone Spark Cluster
 
-To run the cluster with `docker-compose` go to `spark-cluster/dc` and follow [these instructions](spark-cluster/dc/README.md).
+To run the cluster with `docker-compose` go to `spark-cluster/dc` and follow [these instructions](spark-cluster/dc).
 
-To run the cluster with `kubernetes` go to `spark-cluster/k8s` and follow [these instructions](spark-cluster/k8s/README.md).
+To run the cluster with `kubernetes` go to `spark-cluster/k8s` and follow [these instructions](spark-cluster/k8s).
