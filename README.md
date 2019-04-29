@@ -49,6 +49,9 @@ To run the cluster with `docker-compose` go to `spark-cluster/dc` and follow [th
 
 To run the cluster with `kubernetes` go to `spark-cluster/k8s` and follow [these instructions](spark-cluster/k8s).
 
+_Setup described in this section does not consider security and resiliency requirements and is suitable only 
+for demonstration purposes._
+
 ## Web UI Sample Pages
 ### \>\> Screen shots of Pyspark Jupyter Notebook Server (`http://localhost:8888`) \<\<
 ### Jupyter Notebook Home Page
