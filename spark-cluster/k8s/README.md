@@ -42,11 +42,27 @@ replicaset.apps/spark-worker2-7d8cb4b589   1         1         1         1m     
 Jim-MacBook-Pro:k8s jim$
 ```
 
-
-
 ## Shutdown Stand-alone Spark Cluster
 Stop kubernetes cluster:
 ```
 cd spark-cluster/k8s
 kubectl delete -f k8s-spark-cluster.yaml
+```
+
+## Web Access to the Stand-alone Spark Cluster
+The following web UIs are available:
+
+|WEB UI|URL|
+|------|---|
+|PySpark Jupyter Notebook Server|`http://localhost:8888`|
+|Spark Master Web UI|`http://localhost:8080`|
+
+For the PySpark Jupyter Notebook Server use this port forwarding specification
+```
+kubectl port-foward <pyspnb-client pod> 8888 4040
+```
+
+For Spark Master Web UI, set up this port forwarding specification
+```
+kubectl port-foward <spark-master pod> 8080
 ```
