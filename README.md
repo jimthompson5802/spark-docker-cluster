@@ -1,9 +1,9 @@
 # Stand-alone Spark Cluster Using Docker Containers
 
-This [blog posting](https://medium.com/@marcovillarreal_40011/creating-a-spark-standalone-cluster-with-docker-and-docker-compose-ba9d743a157f) inspired the work described in this repo.  The steps described in this repo use a different approach in creating the Docker images.  One result of this different approach is the availability of a PySpark Jupyter Notebook Server.  This repo demonstrates how to run a stand-alone Spark cluster using Docker Containers with `docker-compose` and `kubernetes`.  The work describe here was performed on a MacBook Pro (MacOS 10.14.4) and Docker for Mac (2.0.0.3).
+This [blog posting](https://medium.com/@marcovillarreal_40011/creating-a-spark-standalone-cluster-with-docker-and-docker-compose-ba9d743a157f) inspired the work described in this repo.  The steps described in this repo use a different approach in creating the Docker images.  One result of this different approach is the availability of a PySpark Jupyter Notebook Server.  This repo demonstrates how to run a stand-alone Spark cluster using Docker Containers with `docker-compose` and `kubernetes`.  The work described here was performed on a MacBook Pro (MacOS 10.14.4) and Docker for Mac (2.0.0.3).
 
 ## Overview
-Components of the stand-alone cluster are composed of these processes:
+Components of the stand-alone cluster:
 
 * PySpark Jupyter Notebook Server with directory for the notebooks
 * Stand-alone Spark Master
