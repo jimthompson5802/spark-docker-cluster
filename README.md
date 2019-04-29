@@ -48,3 +48,21 @@ cd docker
 To run the cluster with `docker-compose` go to `spark-cluster/dc` and follow [these instructions](spark-cluster/dc).
 
 To run the cluster with `kubernetes` go to `spark-cluster/k8s` and follow [these instructions](spark-cluster/k8s).
+
+## Web UI Sample Pages
+### \>\> Screen shots of Pyspark Jupyter Notebook Server (`http://localhost:8888`) \<\<
+### Jupyter Notebook Home Page
+![PySpark Jupyter Notebook Home Page](images/jupyter_notebook_home_page.png)
+
+
+### Example PySpark Jupyter Notebook
+![PySpark Jupyter Notebook Example](images/jupyter_notebook_example.png)
+
+
+### \>\> Screen shots of Spark Master Web UI (`http://localhost:8080`) \<\<
+### Spark Master Web UI - Main Page
+![Spark Master Web UI - Main Page](images/spark_master_web_ui.png)
+
+
+### Spark Job Web UI
+![Spark Job Web UI](images/spark_job_web_ui.png)
