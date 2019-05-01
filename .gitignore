@@ -9,6 +9,7 @@ __pycache__
 metastore_db
 derby.log
 spark-cluster/dc/.env
+port-forward-pids
 
 # keep track of these files
 !data/README.md
