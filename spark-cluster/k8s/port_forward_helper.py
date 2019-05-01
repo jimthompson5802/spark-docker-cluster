@@ -65,3 +65,5 @@ else:
 
     os.remove(PID_LIST_FILE)
 
+    print('teardown complete for port-forwarding pids:', pid_string)
+

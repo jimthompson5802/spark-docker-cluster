@@ -112,3 +112,12 @@ The following web UIs are available:
 |PySpark Jupyter Notebook Server|`http://localhost:8888`|
 |Spark Master Web UI|`http://localhost:8080`|
 
+Before using the web UIs, kubernetes port forwarding must be established by the following command.
+```
+cd spark-cluster/k8s
+python port_forward_Helper.py setup
+
+```
+
+
+
