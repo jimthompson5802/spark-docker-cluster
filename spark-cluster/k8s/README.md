@@ -105,19 +105,48 @@ kubectl delete -f k8s-spark-cluster.yaml
 ```
 
 ## Web Access to the Stand-alone Spark Cluster
-The following web UIs are available:
+
+Before using the web UIs, kubernetes port forwarding must be established by the following command.
+```
+cd spark-cluster/k8s
+python port_forward_helper.py setup
+```
+
+Output from the above should be similar to this:
+```
+Jim-MacBook-Pro:k8s jim$ python port_forward_helper.py setup
+invoke command kubectl port-forward pyspnb-client-69f57c5564-j9gv5 8888 4040
+started pid: 4201
+invoke command kubectl port-forward spark-master-57fbf6bc58-8qlmc 8080
+started pid: 4202
+invoke command kubectl port-forward spark-worker1-645bc4765d-bj2b8 18081
+started pid: 4203
+invoke command kubectl port-forward spark-worker2-767678476-l97g9 28081
+started pid: 4204
+```
+
+To verify that port forwarding has been established execute this command `ps -ef | grep port-forward`.  Output from 
+this command should look similar to the following:
+```
+Jim-MacBook-Pro:k8s jim$ ps -ef | grep port-forward
+  501  4201     1   0 10:16PM ttys001    0:00.13 kubectl port-forward pyspnb-client-69f57c5564-j9gv5 8888 4040
+  501  4202     1   0 10:16PM ttys001    0:00.12 kubectl port-forward spark-master-57fbf6bc58-8qlmc 8080
+  501  4203     1   0 10:16PM ttys001    0:00.13 kubectl port-forward spark-worker1-645bc4765d-bj2b8 18081
+  501  4204     1   0 10:16PM ttys001    0:00.12 kubectl port-forward spark-worker2-767678476-l97g9 28081
+  501  4216  1573   0 10:16PM ttys001    0:00.00 grep port-forward
+```
+
+After establishing port forwarding, the following web UI can be accessed.
 
 |WEB UI|URL|
 |------|---|
 |PySpark Jupyter Notebook Server|`http://localhost:8888`|
 |Spark Master Web UI|`http://localhost:8080`|
 
-Before using the web UIs, kubernetes port forwarding must be established by the following command.
+Execute the following command to shutdown port-forwarding.
 ```
 cd spark-cluster/k8s
-python port_forward_Helper.py setup
-
+python port_forward_helper.py teardown
 ```
-
 
 
